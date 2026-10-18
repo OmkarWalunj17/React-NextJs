@@ -26,6 +26,6 @@ export default function App()
   );
 }
 
-function Message(props){
+function Message(props : any){
   return <p>You have read <strong>{props.count}</strong> pieces of advice.</p>
 }
