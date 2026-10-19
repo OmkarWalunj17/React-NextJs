@@ -1,0 +1,24 @@
+
+
+What are the two options to setup a React Project ?
+
+1) Create React App
+2) Vite  
+
+=========================================================================================
+
+Create React App :
+1) Already configured with ESLint, Prettier, Jest and Babel.
+2) Uses slow and outdated technologies under the hood like webpack.
+3) Never use for a real world app, must be used only for tutorials and experiments.
+
+=========================================================================================
+
+Vite :
+1) Modern build tool 
+2) Also contains starter templates
+3) Manual setup of ESlint, Prettier and Jest.
+4) Used for modern world apps.
+5) Extremely Fast Hot Module Replacement (HMR).
+
+=========================================================================================
