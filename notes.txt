@@ -22,3 +22,55 @@ Vite :
 5) Extremely Fast Hot Module Replacement (HMR).
 
 =========================================================================================
+
+Creating a New React App :
+1) using CRA : npx create-react-app@5 pizza-app
+
+Output : 
+Success! Created pizza-app at D:\React-NextJs\02-Using-CRA-For-Project-Creation\pizza-app
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd pizza-app
+  npm start
+
+Happy hacking!
+
+--------------------------------
+npm run build 
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+-------------------------------------------------------------------------------------------
+
+2) using vite : npm create vite@latest
+
+This will show you a list of templates to choose from.
+
+Alternate way :
+
+npm create vite@latest my-react-app -- --template react
+
+npm create vite@latest my-react-app -- --template react-ts
+
