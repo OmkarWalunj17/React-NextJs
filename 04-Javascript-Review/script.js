@@ -180,8 +180,29 @@ const updatedBook = {
 };
 console.log(updatedBook);
 
+const getYear = (str) => {
+  return str.split("-")[0];
+};
+
 // Normal Strings : "'' or ""
 const summary = `${title} is a book, with ${pages} pages, 
 and was written by ${author} 
-published on ${publicationDate.split("-")[0]}`;
+published on ${getYear(publicationDate)}. 
+The book has ${hasMovieAdaptation ? "" : "not"} been adapted as a movie.`;
 console.log(summary);
+
+// Ternary Operator
+const pagesRange = pages > 1000 ? "over a thousand" : "less than one thousand";
+console.log(`The book has pages range : ${pagesRange} pages`);
+
+// Normal Function
+// function getYear(str) {
+//   return str.split("-")[0];
+// }
+
+// Arrow Functions
+// const getYear = (str) => {
+//   return str.split("-")[0];
+// };
+
+console.log(getYear(publicationDate));
