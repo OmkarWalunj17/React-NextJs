@@ -184,3 +184,38 @@ console.log(adventureBooks);
 // array reduce method
 const pagesAllBooks = books.reduce((sum, book) => sum + book.pages, 0);
 console.log(pagesAllBooks);
+
+// sort method -> changes the existing array
+// slice is used to preserve order of arr
+const arr = [3, 7, 1, 9, 6];
+const sorted = arr.slice().sort((a, b) => a - b);
+const sortedDesc = arr.slice().sort((a, b) => b - a);
+console.log(sorted);
+console.log(sortedDesc);
+console.log(arr);
+
+const sortedByPages = books.slice().sort((a, b) => b.pages - a.pages);
+const sortedByPagesDesc = books.slice().sort((a, b) => a.pages - b.pages);
+console.log(sortedByPages);
+console.log(sortedByPagesDesc);
+
+// Immutable Arrays
+const newBook = {
+  id: 6,
+  title: "Harry Potter and the Chamber of Secrets",
+  author: "J. K. Rowling",
+};
+
+// 1) Add a Book Object to array
+const booksAfterAdd = [...books, newBook];
+console.log(booksAfterAdd);
+
+// 2) Delete a Book Object from array
+const booksAfterDelete = booksAfterAdd.filter((book) => book.id !== 3);
+console.log(booksAfterDelete);
+
+// 3) Update a Book Object in the array
+const booksAfterUpdate = booksAfterDelete.map((book) =>
+  book.id === 1 ? { ...book, pages: 12210 } : book,
+);
+console.log(booksAfterUpdate);
