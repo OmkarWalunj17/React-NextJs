@@ -14,4 +14,4 @@ root.render(
 );
 // React before 18
 // import ReactDOM from "react-dom";
-// React.render(<App />);
+// ReactDOM.render(<App />);
