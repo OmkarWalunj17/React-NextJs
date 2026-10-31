@@ -1,3 +1,5 @@
+Index:
+Chapter 1: Components, Props, JSX.
 
 
 What are the two options to setup a React Project ?
@@ -72,5 +74,26 @@ Alternate way :
 
 npm create vite@latest my-react-app -- --template react
 
-npm create vite@latest my-react-app -- --template react-ts
+npm create vite@latest my-react-app -- --template react-ts 
 
+==========================================================================================
+
+Chapter 1: Components, Props, JSX
+----------------------------------------------------------------------------------------------
+React.StrictMode:
+The only thing it does is that during development it will render all components twice in order to find certain bugs.
+
+And also React will check if we're using outdated parts of the React API.
+
+===============================================================================================
+
+Components : 
+1) React applications are entirely made out of components.
+2) Building blocks of user interfaces in React. 
+3) React takes all components and draws them on a webpage/UI.
+4) Technically, React renders a view for each component.
+5) And all these views together make up the UI.
+6) Component can also be called a piece of UI that has its own data, JS logic, 
+   and appearance how it works and looks).
+7) We build complex UIs by building multiple components and combining them.
+8) Components can be reused, nested inside each other, and pass data between them.
