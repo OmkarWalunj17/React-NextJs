@@ -1,6 +1,49 @@
 Index:
 Chapter 1: Components, Props, JSX.
+========================================================================================
 
+Rise of SPA: 
+1) Server Side Rendering - making a comeback (NextJs)
+2) Client SIde Rendering - developers started writing more code which led to rise of Client Side Rendering.
+
+NOTE: Piece of Data = Piece of State 
+
+Problems with JS:
+1) Requires lot of direct DOM manipulation and traversing.
+2) Data(state) is usually stored in the DOM, shared across entire app.
+3) Hard to Reason
+4) Bugs
+
+Therefore, we use REACT.
+-----------------------------------------------------------------------------------------
+
+Why do frontend frameworks exist ?
+------------------------------------------------------------------------------------------
+1) Keeping a UI in sync with Data is really hard and a lot of work -> React, Angular.
+2) They enforce a correct way of structuring and writing code.
+3) They give developers and teams a consistent way of building front end applications.
+
+===========================================================================================
+
+What is React ?
+-------------------------------------------------------------------------------------------
+1) JS library for building UIs.
+2) declarative, component based, state driven.
+3) declarative syntax called JSX is used to describe how components look like.
+4) decalrative : telling React what a component should look like, based on current data/state.
+5) React is abstraction away from DOM: we never touch DOM.
+6) JSX: a syntax that combinesHTML, CSS, JS, as well as referring other components.
+
+7) React reacts to state changes by re-rendering the UI.
+8) React is just a library.
+9) Reason: It is just the view layer. We need to pick multiple libraries to build a complete application.
+10) Complete frameworks built on top of React - NextJs, Remix.
+
+-----------------------------------------------------------------------------------------------
+
+Summary :
+1) Rendering components on a webpage UI based on their current state.
+2) Keeping the UI in sync with state, by re-rendering (reacting) when state changes.
 
 What are the two options to setup a React Project ?
 
@@ -13,6 +56,17 @@ Create React App :
 1) Already configured with ESLint, Prettier, Jest and Babel.
 2) Uses slow and outdated technologies under the hood like webpack.
 3) Never use for a real world app, must be used only for tutorials and experiments.
+
+Under the Hood:
+1) CRA - sets up the React project.
+2) Webpack - bundling/building/
+3) Babel - transpiles modern Javascript/JSX.
+4) ESlint - linting.
+5) Jest - testing.
+
+Drawbacks:
+1) slow and outdated.
+2) not used for modern world app.
 
 =========================================================================================
 
@@ -94,6 +148,123 @@ Components :
 4) Technically, React renders a view for each component.
 5) And all these views together make up the UI.
 6) Component can also be called a piece of UI that has its own data, JS logic, 
-   and appearance how it works and looks).
+   and appearance how it works and looks.
 7) We build complex UIs by building multiple components and combining them.
 8) Components can be reused, nested inside each other, and pass data between them.
+9) Component Tree can be used to identify the component hierarchy.
+10) We write new components using functions.
+
+-----------------------------------------------------------------------------------------------
+
+JSX :
+1) Declarative syntax to describe what components look like and how they work.
+2) Components must return a block of JSX.
+3) Extension of Javascript that allows us to embed JS, CSS and React components into HTML.
+4) Babel : JSX to JS
+5) Each JSX element is converted to a React.createElement function call.
+6) We could use React without JSX.
+    i) makes code hard to understand and read.
+
+
+JSX is decalrative ?
+------------------------------------------------------------------------------------------------
+Imperative: JS (How to do things ?)
+1) Manual DOM element selections and DOM traversing.
+2) Step-by-step DOM mutations until we reach the desired UI.
+
+Declarative: React (What we want)
+1) Describe what UI should look like using JSX, based on current data.
+2) React is an abstraction away from DOM: we never touch the DOM.
+3) Instead, we think of the UI as a reflection of the current data.
+------------------------------------------------------------------------------------------------
+
+Note: We can write JS in components as they are just normal JS functions.
+
+Example: 
+
+function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+
+  // console.log(isOpen);
+  // if (hour >= openHour && hour <= closeHour) alert("We're currently open!");
+  // else alert("Sorry we're closed");
+  return (
+    <footer className="footer">
+      {new Date().toLocaleTimeString()}. We're currently open.
+    </footer>
+  );
+  // return React.createElement("footer", null, "We're currently open!");
+}
+------------------------------------------------------------------------------------------------
+
+
+Separation of Concerns ?
+------------------------------------------------------------------------------------------------
+Rise of SPA's 
+--> JS is in charge of HTML 
+--> Logic and UI are tightly coupled --> Why keep them seperated ? 
+--> React Components + JSX
+
+Logic and UI are tightly coupled : Fundamental Reason for Components.
+
+Component : Data + Logic + Appearance
+
+------------------------------------------------------------------------------------------------
+
+So don't we have speration of concerns in React ?
+--> Yes we do have, but the paradigm is different.
+
+ONE Technology Per File --> Traditional Seperation of Concerns.
+ONE Component Per File --> New React Seperation of Concerns.
+
+------------------------------------------------------------------------------------------------
+
+This is how we render App:
+
+function App() {
+  return (
+    <div className="container">
+      <Header />
+      <Menu />
+      <Footer />
+    </div>
+  );
+}
+
+Here, App is made up of several components like Header, Footer, Menu etc.
+
+function Menu() {
+  return (
+    <main className="menu">
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </main>
+  );
+}
+
+------------------------------------------------------------------------------------------------
+
+Styling in React:
+------------------------------------------------------------------------------------------------
+1) We can style using CSS files.
+2) Inline JSX styling
+    Example: 
+
+function Header() {
+  const style = { color: "red", fontSize: "48px", textTransform: "uppercase" };
+  return (
+    <header className="header">
+      <h1 style={style}>Fast React Pizza Co.</h1>;
+      OR 
+      <h1 style={{ color: "red", fontSize: "48px", textTransform: "uppercase" }}>Fast React Pizza Co.</h1>;
+    </header>
+  );
+} 
+
+Notice the {{}} syntax, double brackets are used for inline styling. 
